@@ -1,0 +1,351 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 25px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.header h1 {
+  font-size: 38px;
+  color: #172554;
+  margin-bottom: 10px;
+}
+
+.header p {
+  color: #64748b;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: white;
+  padding: 28px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+  color: #64748b;
+  margin-bottom: 18px;
+  font-size: 18px;
+}
+
+.card h2 {
+  font-size: 27px;
+}
+
+.income-card h2 {
+  color: #16a34a;
+}
+
+.expense-card h2 {
+  color: #dc2626;
+}
+
+.balance-card h2 {
+  color: #2563eb;
+}
+
+.form-section,
+.history-section {
+  margin-bottom: 35px;
+}
+
+.form-section h2,
+.history-section h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 0.9fr 1fr auto;
+  gap: 12px;
+}
+
+input,
+select {
+  width: 100%;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: white;
+  font-size: 14px;
+  outline: none;
+}
+
+input:focus,
+select:focus {
+  border-color: #2563eb;
+}
+
+button {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+.submit-btn,
+.edit-btn {
+  background: #2563eb;
+}
+
+.cancel-btn {
+  background: #64748b;
+}
+
+.filters {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.filters input {
+  flex: 2;
+}
+
+.filters select {
+  flex: 1;
+}
+
+.transaction {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  background: white;
+  padding: 18px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.transaction-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.transaction-info small {
+  color: #94a3b8;
+}
+
+.transaction-type {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 20px;
+}
+
+.transaction-type.income {
+  color: #15803d;
+  background: #dcfce7;
+}
+
+.transaction-type.expense {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+
+.transaction-amount.income {
+  color: #16a34a;
+}
+
+.transaction-amount.expense {
+  color: #dc2626;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.delete-btn {
+  background: #dc2626;
+}
+
+.empty-message {
+  background: white;
+  padding: 30px;
+  text-align: center;
+  color: #64748b;
+  border-radius: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+@media (max-width: 850px) {
+  form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .submit-btn,
+  .cancel-btn {
+    min-height: 45px;
+  }
+
+  .transaction {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin: 15px auto;
+    padding: 15px;
+  }
+
+  .header h1 {
+    font-size: 28px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+
+  .transaction {
+    gap: 12px;
+  }
+
+  .transaction-info {
+    flex-basis: 100%;
+  }
+
+  .actions {
+    width: 100%;
+  }
+
+  .actions button {
+    flex: 1;
+  }
+}
+
+input,
+select {
+  color: #1e293b;
+  background-color: white;
+}
+
+input::placeholder {
+  color: #94a3b8;
+}
+
+select option {
+  color: #1e293b;
+  background: white;
+}
+
+
+/* Premium animations */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeUp 0.6s ease both;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.12);
+}
+
+.form-section,
+.history-section {
+  animation: fadeUp 0.7s ease both;
+}
+
+input, select {
+  transition: all 0.25s ease;
+}
+
+input:focus, select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+button {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(37, 99, 235, 0.2);
+}
+
+.transaction {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  animation: fadeUp 0.4s ease both;
+}
+
+.transaction:hover {
+  transform: translateX(5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
